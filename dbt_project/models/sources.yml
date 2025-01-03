@@ -1,0 +1,4 @@
+sources:
+  - name: "example"
+    tables:
+      - name: "regularly_updated"
