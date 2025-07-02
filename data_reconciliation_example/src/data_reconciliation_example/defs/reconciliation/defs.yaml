@@ -1,0 +1,13 @@
+type: data_reconciliation_example.components.reconciliation_check.ReconciliationCheck
+
+attributes:
+  asset_key: ["rarely_updated_staged"]
+  upstream_asset_key: ["rarely_updated"]
+
+---
+
+type: data_reconciliation_example.components.reconciliation_check.ReconciliationCheck
+
+attributes:
+  asset_key: ['main','regularly_updated_staging']
+  upstream_asset_key: ['main','regularly_updated']

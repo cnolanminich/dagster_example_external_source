@@ -11,3 +11,9 @@ wheels/
 
 # dbt
 dbt_project/target/*
+/data_reconciliation_example/.tmp_dagster_home_1ojxwwsx
+data_reconciliation_example/dbt_project/.user.yml
+data_reconciliation_example/dbt_project/example.duckdb
+/data_reconciliation_example/dbt_project/logs
+/data_reconciliation_example/dbt_project/target
+/tmp18urx_c1

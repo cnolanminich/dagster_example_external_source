@@ -122,7 +122,7 @@ external_tables = get_duckdb_tables()
 
 def create_external_table_asset(table_name):
     """Asset Factory that creates _external assets_"""
-    return AssetSpec(key=table_name, group_name="source_data", kinds={"snowflake"})
+    return AssetSpec(key=f"main/{table_name}", group_name="source_data", kinds={"snowflake"})
 
 
 external_sources = [create_external_table_asset(table) for table in external_tables]
@@ -136,7 +136,7 @@ def create_asset(table_name):
     @asset(
         name=f"{table_name}_staged",
         kinds={"databricks"},
-        deps=[table_name],
+        deps=[ dg.AssetKey(["main",table_name])],
         automation_condition=AutomationCondition.eager(),  # use declarative automation to propagate upstream changes
     )
     def my_asset():
@@ -153,7 +153,7 @@ staged = [create_asset(table) for table in external_tables]
 # under the hood the dbt integration looks a lot like the factory above
 
 my_dbt_project = DbtProject(
-    project_dir=p(__file__).parent.joinpath("dbt_project").resolve()
+    project_dir=p(__file__).parent.parent.parent.parent.joinpath("dbt_project").resolve()
 )
 my_dbt_project.prepare_if_dev()
 
@@ -166,7 +166,7 @@ class MyDbtTranslator(DagsterDbtTranslator):
         return None
 
     def get_asset_key(self, dbt_resource_props) -> AssetKey:
-        return AssetKey(dbt_resource_props["name"])
+        return AssetKey([dbt_resource_props["schema"], dbt_resource_props["name"]])
 
 
 @dbt_assets(
@@ -221,7 +221,8 @@ def watch_externals(context: SensorEvaluationContext):
         if max_date > last_update:
             updated_tables.append(
                 AssetMaterialization(
-                    asset_key=table,
+                    asset_key=dg.AssetKey(['main',table]),
+                    description=f"Table {table} has been updated.",
                     metadata={
                         "dagster/row_count": num_rows,
                         "dagster/last_updated": max_date,
@@ -229,8 +230,9 @@ def watch_externals(context: SensorEvaluationContext):
                     },
                 )
             )
-            last_updates[i] = num_rows
+            last_updates[i] = max_date
     cursor["last_updated"] = last_updates
+    context.log.info(f"updated tables: {updated_tables}")
     return SensorResult(asset_events=updated_tables, cursor=json.dumps(cursor))
 
 @dg.asset_check(asset="rarely_updated_staged")
@@ -270,9 +272,9 @@ def check_row_count_comparison(context):
     downstream_count = downstream_row_count.value
     upstream_count = upstream_row_count.value
     
-    # Compare row counts (example: downstream should have same or fewer rows)
-    passed = downstream_count <= upstream_count
-    
+    # Compare row counts (example: downstream should have same rows)
+    passed = downstream_count == upstream_count
+
     return dg.AssetCheckResult(
         passed=passed,
         metadata={
@@ -283,7 +285,7 @@ def check_row_count_comparison(context):
     )
 
 
-real_definitions = Definitions(
+defs = Definitions(
     assets=[*external_sources, *staged, my_dbt_assets],
     asset_checks=[check_row_count_comparison],
     resources={"dbt": DbtCliResource(project_dir=my_dbt_project)},

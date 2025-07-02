@@ -1,0 +1,204 @@
+[0m13:11:46.873209 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10363fcb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10776f9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10776fc50>]}
+
+
+============================== 13:11:46.875470 | c79ae13c-47cd-47d3-9a84-135860a4ef62 ==============================
+[0m13:11:46.875470 [info ] [MainThread]: Running with dbt=1.8.9
+[0m13:11:46.875713 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/christian/code/dagster-demos/dagster_example_external_source/dbt_project', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/christian/code/dagster-demos/dagster_example_external_source/dbt_project/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt build', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m13:11:47.005850 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c79ae13c-47cd-47d3-9a84-135860a4ef62', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107929f30>]}
+[0m13:11:47.025682 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c79ae13c-47cd-47d3-9a84-135860a4ef62', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106bb8c00>]}
+[0m13:11:47.027634 [info ] [MainThread]: Registered adapter: duckdb=1.9.4
+[0m13:11:47.062174 [debug] [MainThread]: checksum: 132857a23e9d07220246854f7763165174ce9b737cfc7867629ace4294e520b1, vars: {}, profile: , target: , version: 1.8.9
+[0m13:11:47.062495 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:11:47.062623 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'c79ae13c-47cd-47d3-9a84-135860a4ef62', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077ef250>]}
+[0m13:11:47.366111 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.my_dbt_project.regularly_updated_staging' (models/regularly_updated_staging.sql) depends on a source named 'raw_data.regularly_updated' which was not found
+[0m13:11:47.366487 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 0.51988685, "process_in_blocks": "0", "process_kernel_time": 0.115315, "process_mem_max_rss": "127434752", "process_out_blocks": "0", "process_user_time": 0.806487}
+[0m13:11:47.366634 [debug] [MainThread]: Command `dbt build` failed at 13:11:47.366597 after 0.52 seconds
+[0m13:11:47.366763 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107f3ec60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107fa89b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10763be70>]}
+[0m13:11:47.366863 [debug] [MainThread]: Flushing usage events
+[0m13:12:54.343758 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104e0fcb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067ef9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067efc50>]}
+
+
+============================== 13:12:54.346181 | 6e6008e2-3ce1-4a29-b1fb-aa95f362a97e ==============================
+[0m13:12:54.346181 [info ] [MainThread]: Running with dbt=1.8.9
+[0m13:12:54.346454 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/christian/code/dagster-demos/dagster_example_external_source/dbt_project', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/christian/code/dagster-demos/dagster_example_external_source/dbt_project/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt build', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m13:12:54.525793 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6e6008e2-3ce1-4a29-b1fb-aa95f362a97e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1069adf30>]}
+[0m13:12:54.545662 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6e6008e2-3ce1-4a29-b1fb-aa95f362a97e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105d38c00>]}
+[0m13:12:54.547225 [info ] [MainThread]: Registered adapter: duckdb=1.9.4
+[0m13:12:54.582094 [debug] [MainThread]: checksum: 132857a23e9d07220246854f7763165174ce9b737cfc7867629ace4294e520b1, vars: {}, profile: , target: , version: 1.8.9
+[0m13:12:54.582427 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:12:54.582554 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '6e6008e2-3ce1-4a29-b1fb-aa95f362a97e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10686b250>]}
+[0m13:12:54.946597 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6e6008e2-3ce1-4a29-b1fb-aa95f362a97e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106bf87d0>]}
+[0m13:12:55.056074 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6e6008e2-3ce1-4a29-b1fb-aa95f362a97e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10657b070>]}
+[0m13:12:55.056273 [info ] [MainThread]: Found 1 model, 1 source, 426 macros
+[0m13:12:55.056901 [info ] [MainThread]: 
+[0m13:12:55.057099 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m13:12:55.057418 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_example'
+[0m13:12:55.151341 [debug] [ThreadPool]: Using duckdb connection "list_example"
+[0m13:12:55.151504 [debug] [ThreadPool]: On list_example: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "my_dbt_project", "target_name": "dev", "connection_name": "list_example"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"example"'
+    
+  
+  
+[0m13:12:55.151597 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:12:55.165849 [debug] [ThreadPool]: SQL status: OK in 0.014 seconds
+[0m13:12:55.166887 [debug] [ThreadPool]: On list_example: Close
+[0m13:12:55.167210 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_example, now create_example_main)
+[0m13:12:55.167411 [debug] [ThreadPool]: Creating schema "database: "example"
+schema: "main"
+"
+[0m13:12:55.169523 [debug] [ThreadPool]: Using duckdb connection "create_example_main"
+[0m13:12:55.169668 [debug] [ThreadPool]: On create_example_main: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "my_dbt_project", "target_name": "dev", "connection_name": "create_example_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='example'
+        and type='sqlite'
+    
+  
+[0m13:12:55.169918 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:12:55.170534 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:12:55.170972 [debug] [ThreadPool]: Using duckdb connection "create_example_main"
+[0m13:12:55.171073 [debug] [ThreadPool]: On create_example_main: BEGIN
+[0m13:12:55.171223 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m13:12:55.171343 [debug] [ThreadPool]: Using duckdb connection "create_example_main"
+[0m13:12:55.171439 [debug] [ThreadPool]: On create_example_main: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "my_dbt_project", "target_name": "dev", "connection_name": "create_example_main"} */
+
+    
+    
+        create schema if not exists "example"."main"
+    
+[0m13:12:55.172035 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:12:55.172335 [debug] [ThreadPool]: On create_example_main: COMMIT
+[0m13:12:55.172430 [debug] [ThreadPool]: Using duckdb connection "create_example_main"
+[0m13:12:55.172513 [debug] [ThreadPool]: On create_example_main: COMMIT
+[0m13:12:55.172641 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m13:12:55.172739 [debug] [ThreadPool]: On create_example_main: Close
+[0m13:12:55.173101 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_example_main, now list_example_main)
+[0m13:12:55.174877 [debug] [ThreadPool]: Using duckdb connection "list_example_main"
+[0m13:12:55.174983 [debug] [ThreadPool]: On list_example_main: BEGIN
+[0m13:12:55.175064 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:12:55.175199 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m13:12:55.175279 [debug] [ThreadPool]: Using duckdb connection "list_example_main"
+[0m13:12:55.175366 [debug] [ThreadPool]: On list_example_main: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "my_dbt_project", "target_name": "dev", "connection_name": "list_example_main"} */
+select
+      'example' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'example'
+  
+[0m13:12:55.184484 [debug] [ThreadPool]: SQL status: OK in 0.009 seconds
+[0m13:12:55.184956 [debug] [ThreadPool]: On list_example_main: ROLLBACK
+[0m13:12:55.185586 [debug] [ThreadPool]: Failed to rollback 'list_example_main'
+[0m13:12:55.185682 [debug] [ThreadPool]: On list_example_main: Close
+[0m13:12:55.186032 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6e6008e2-3ce1-4a29-b1fb-aa95f362a97e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c6fad0>]}
+[0m13:12:55.186189 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:12:55.186291 [debug] [MainThread]: On master: BEGIN
+[0m13:12:55.186418 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:12:55.186586 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:12:55.186688 [debug] [MainThread]: On master: COMMIT
+[0m13:12:55.186776 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:12:55.186860 [debug] [MainThread]: On master: COMMIT
+[0m13:12:55.186983 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:12:55.187064 [debug] [MainThread]: On master: Close
+[0m13:12:55.187188 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m13:12:55.187291 [info ] [MainThread]: 
+[0m13:12:55.192452 [debug] [Thread-1 (]: Began running node model.my_dbt_project.regularly_updated_staging
+[0m13:12:55.192643 [info ] [Thread-1 (]: 1 of 1 START sql table model main.regularly_updated_staging .................... [RUN]
+[0m13:12:55.192794 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_example_main, now model.my_dbt_project.regularly_updated_staging)
+[0m13:12:55.193054 [debug] [Thread-1 (]: Began compiling node model.my_dbt_project.regularly_updated_staging
+[0m13:12:55.195289 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_dbt_project.regularly_updated_staging"
+[0m13:12:55.195591 [debug] [Thread-1 (]: Began executing node model.my_dbt_project.regularly_updated_staging
+[0m13:12:55.207318 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_dbt_project.regularly_updated_staging"
+[0m13:12:55.207789 [debug] [Thread-1 (]: Using duckdb connection "model.my_dbt_project.regularly_updated_staging"
+[0m13:12:55.207910 [debug] [Thread-1 (]: On model.my_dbt_project.regularly_updated_staging: BEGIN
+[0m13:12:55.208016 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:12:55.208239 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m13:12:55.208332 [debug] [Thread-1 (]: Using duckdb connection "model.my_dbt_project.regularly_updated_staging"
+[0m13:12:55.208430 [debug] [Thread-1 (]: On model.my_dbt_project.regularly_updated_staging: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.regularly_updated_staging"} */
+
+  
+    
+    
+
+    create  table
+      "example"."main"."regularly_updated_staging__dbt_tmp"
+  
+    as (
+      select * from "example"."raw_data"."regularly_updated"
+    );
+  
+  
+[0m13:12:55.214970 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.regularly_updated_staging"} */
+
+  
+    
+    
+
+    create  table
+      "example"."main"."regularly_updated_staging__dbt_tmp"
+  
+    as (
+      select * from "example"."raw_data"."regularly_updated"
+    );
+  
+  
+[0m13:12:55.215197 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m13:12:55.215382 [debug] [Thread-1 (]: On model.my_dbt_project.regularly_updated_staging: ROLLBACK
+[0m13:12:55.218981 [debug] [Thread-1 (]: Failed to rollback 'model.my_dbt_project.regularly_updated_staging'
+[0m13:12:55.219119 [debug] [Thread-1 (]: On model.my_dbt_project.regularly_updated_staging: Close
+[0m13:12:55.220558 [debug] [Thread-1 (]: Runtime Error in model regularly_updated_staging (models/regularly_updated_staging.sql)
+  Catalog Error: Table with name regularly_updated does not exist!
+  Did you mean "example.regularly_updated"?
+  LINE 11:       select * from "example"."raw_data"."regularly_updated"
+      );
+    
+    ...
+                               ^
+[0m13:12:55.221089 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6e6008e2-3ce1-4a29-b1fb-aa95f362a97e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106fcc050>]}
+[0m13:12:55.221305 [error] [Thread-1 (]: 1 of 1 ERROR creating sql table model main.regularly_updated_staging ........... [[31mERROR[0m in 0.03s]
+[0m13:12:55.221510 [debug] [Thread-1 (]: Finished running node model.my_dbt_project.regularly_updated_staging
+[0m13:12:55.222093 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:12:55.222194 [debug] [MainThread]: On master: BEGIN
+[0m13:12:55.222275 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:12:55.222468 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:12:55.222551 [debug] [MainThread]: On master: COMMIT
+[0m13:12:55.222633 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:12:55.222709 [debug] [MainThread]: On master: COMMIT
+[0m13:12:55.222822 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:12:55.222903 [debug] [MainThread]: On master: Close
+[0m13:12:55.223008 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:12:55.223090 [debug] [MainThread]: Connection 'model.my_dbt_project.regularly_updated_staging' was properly closed.
+[0m13:12:55.223182 [info ] [MainThread]: 
+[0m13:12:55.223282 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.17 seconds (0.17s).
+[0m13:12:55.223661 [debug] [MainThread]: Command end result
+[0m13:12:55.233524 [info ] [MainThread]: 
+[0m13:12:55.233687 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m13:12:55.233791 [info ] [MainThread]: 
+[0m13:12:55.233913 [error] [MainThread]:   Runtime Error in model regularly_updated_staging (models/regularly_updated_staging.sql)
+  Catalog Error: Table with name regularly_updated does not exist!
+  Did you mean "example.regularly_updated"?
+  LINE 11:       select * from "example"."raw_data"."regularly_updated"
+      );
+    
+    ...
+                               ^
+[0m13:12:55.234007 [info ] [MainThread]: 
+[0m13:12:55.234106 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m13:12:55.234317 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 0.9232045, "process_in_blocks": "0", "process_kernel_time": 0.174278, "process_mem_max_rss": "175800320", "process_out_blocks": "0", "process_user_time": 1.014823}
+[0m13:12:55.234442 [debug] [MainThread]: Command `dbt build` failed at 13:12:55.234414 after 0.92 seconds
+[0m13:12:55.234561 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e6fac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10708cb90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10708caf0>]}
+[0m13:12:55.234661 [debug] [MainThread]: Flushing usage events
